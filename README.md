@@ -47,11 +47,11 @@ class userController implements ServiceSubscriberInterface
 
 ## Must-have features
 ### Step 1
-1. -[ ] Create an [interface](https://www.php.net/manual/en/language.oop5.interfaces.php) called `transform`, that requires one public method called `transform`, this function accepts a string and returns a string.
+1. -[x] Create an [interface](https://www.php.net/manual/en/language.oop5.interfaces.php) called `transform`, that requires one public method called `transform`, this function accepts a string and returns a string.
 
-2. -[ ] Make a class which capitalizes every other letter in a string (eg: "hElLo WoRlD"). Implement the `transform` interface.
+2. -[x] Make a class which capitalizes every other letter in a string (eg: "hElLo WoRlD"). Implement the `transform` interface.
 
-3. -[ ] Make another class which changes all spaces to dashes "-" (eg: "hello-world-i-love-to-code"). Implement the `transform` interface.
+3. -[x] Make another class which changes all spaces to dashes "-" (eg: "hello-world-i-love-to-code"). Implement the `transform` interface.
 
 4. -[ ] Make a logger class which logs messages in a file called "log.info".
 
