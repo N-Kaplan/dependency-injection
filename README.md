@@ -53,14 +53,22 @@ class userController implements ServiceSubscriberInterface
 
 3. -[x] Make another class which changes all spaces to dashes "-" (eg: "hello-world-i-love-to-code"). Implement the `transform` interface.
 
-4. -[ ] Make a logger class which logs messages in a file called "log.info".
-
-### Step 2
--[ ] Now make a "master" class which accepts a user input (simple form with 1 field). It should do the following.
+4. -[x] Make a logger class which logs messages in a file called "log.info".
+    NOTE: change path to log.info in config/packages/dev/monolog.yaml ```path:  "%kernel.logs_dir%/log.info"```.
+- ### Step 2
+- [ ] Now make a "master" class which accepts a user input (simple form with 1 field). It should do the following.
 - You log the message
 - You echo it to the screen using the weird capitalization
+   - Note: additions to `services.yaml` in config/routes: 
+  ```
+    # makes classes in src/ available to be used as services
+    App\Services\Capitalizer : ~
+    App\Services\Dasher : ~
+    
+    App\Services\Transform $capitalizer : '@App\Services\Capitalizer'
+    App\Services\Transform $dasher : '@App\Services\Dasher'```
 
--[ ] Reuse the classes you made inside the master class, but you should not use the keyword "new" inside the master class. Pass it to the constructor.
+- [ ] Reuse the classes you made inside the master class, but you should not use the keyword "new" inside the master class. Pass it to the constructor.
 
 To type hint the string transformation class, use the name of the `transform` interface instead of the concrete class you are using: you will see in step 3 why.
 

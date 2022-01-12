@@ -7,8 +7,16 @@ use Psr\Log\LoggerInterface;
 //see: https://symfony.com/doc/current/logging.html
 //see: https://github.com/php-fig/log/blob/master/src/LoggerInterface.php
 Class Logger {
-    public function index(LoggerInterface $logger, $message)
+
+    private LoggerInterface $logger;
+
+    public function __construct(LoggerInterface $logger)
     {
-        $logger->info($message);
+        $this->logger = $logger;
+    }
+
+    public function index($message)
+    {
+        $this->logger->info($message);
     }
 }
