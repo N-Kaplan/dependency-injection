@@ -86,6 +86,10 @@ This is a really powerful concept called **polymorphism**. It is made possible b
 In short: When two objects have the same interface, they are functionally interchangeable = polymorphism.
 
 ## Nice to have features
--[ ] Change your Logger class for [Monolog](https://github.com/Seldaek/monolog). In this case you will not use your own logger class anymore.
+-[x] Change your Logger class for [Monolog](https://github.com/Seldaek/monolog). In this case you will not use your own logger class anymore.
 
+    - Note: define service in ```services.yaml```:
+     ```
+    Monolog\Logger : ~
 
+    App\Controller|MessageController $logger : '@Monolog\Logger'```

@@ -18,6 +18,10 @@ services:
     App\Services\Transform $capitalizer: '@App\Services\Capitalizer'
     App\Services\Transform $dasher: '@App\Services\Dasher'
 
+    Monolog\Logger : ~
+
+    App\Controller|MessageController $logger : '@Monolog\Logger'
+
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/'

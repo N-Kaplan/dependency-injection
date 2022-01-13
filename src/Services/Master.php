@@ -9,20 +9,18 @@ class Master
 {
     private Transform $capitalizer;
     private Transform $dasher;
-    private Logger $logger;
+//    private Logger $logger;
     private string $message;
 
     /**
      * @param Transform $capitalizer
      * @param Transform $dasher
-     * @param \App\Services\Logger $logger
      * @param string $message
      */
-    public function __construct(Transform $capitalizer, Transform $dasher, \App\Services\Logger $logger, string $message)
+    public function __construct(Transform $capitalizer, Transform $dasher, string $message)
     {
         $this->capitalizer = $capitalizer;
         $this->dasher = $dasher;
-        $this->logger = $logger;
         $this->message = $message;
     }
 
