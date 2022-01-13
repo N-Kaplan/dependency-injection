@@ -75,7 +75,7 @@ To type hint the string transformation class, use the name of the `transform` in
 You can execute this master class in a simple controller.
 
 ### Step 3: Polymorphism
--[x] Add a dropdown with 2 options in your form (keep it simple, just an html dropdown will be enough for now). The 2 options are the names of the 2 classes you made that transform a string. Make it so that depending on the user input one transformation is applied.
+- [x] Add a dropdown with 2 options in your form (keep it simple, just an html dropdown will be enough for now). The 2 options are the names of the 2 classes you made that transform a string. Make it so that depending on the user input one transformation is applied.
 
 **Do not change anything in your master class file!**
 
@@ -86,7 +86,7 @@ This is a really powerful concept called **polymorphism**. It is made possible b
 In short: When two objects have the same interface, they are functionally interchangeable = polymorphism.
 
 ## Nice to have features
--[x] Change your Logger class for [Monolog](https://github.com/Seldaek/monolog). In this case you will not use your own logger class anymore.
+- [x] Change your Logger class for [Monolog](https://github.com/Seldaek/monolog). In this case you will not use your own logger class anymore.
 
     - Note: define service in ```services.yaml```:
      ```
