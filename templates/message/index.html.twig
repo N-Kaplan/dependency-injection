@@ -9,18 +9,17 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello! ✅</h1>
+    <h1>Write a text you want to transform!✅</h1>
     <p>{{ form(form) }}</p>
-{#    <form action="">#}
-{#        <label for="message">Your Message: </label>#}
-{#        <input type="text" name="message">#}
-{#        <input type="submit" value="Submit">#}
-{#    </form>#}
     <br>
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/naama/git/Symfony-intro/dependency-injection/src/Controller/MessageController.php'|file_link(0) }}">src/Controller/MessageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/naama/git/Symfony-intro/dependency-injection/templates/message/index.html.twig'|file_link(0) }}">templates/message/index.html.twig</a></code></li>
-    </ul>
+    <h3>Here's your message:</h3>
+    <br>
+    <p>{{ output }}</p>
+{#    <br>#}
+{#    This friendly message is coming from:#}
+{#    <ul>#}
+{#        <li>Your controller at <code><a href="{{ 'C:/Users/naama/git/Symfony-intro/dependency-injection/src/Controller/MessageController.php'|file_link(0) }}">src/Controller/MessageController.php</a></code></li>#}
+{#        <li>Your template at <code><a href="{{ 'C:/Users/naama/git/Symfony-intro/dependency-injection/templates/message/index.html.twig'|file_link(0) }}">templates/message/index.html.twig</a></code></li>#}
+{#    </ul>#}
 </div>
 {% endblock %}

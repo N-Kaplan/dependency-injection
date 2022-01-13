@@ -56,7 +56,7 @@ class userController implements ServiceSubscriberInterface
 4. -[x] Make a logger class which logs messages in a file called "log.info".
     NOTE: change path to log.info in config/packages/dev/monolog.yaml ```path:  "%kernel.logs_dir%/log.info"```.
 - ### Step 2
-- [ ] Now make a "master" class which accepts a user input (simple form with 1 field). It should do the following.
+- [x] Now make a "master" class which accepts a user input (simple form with 1 field). It should do the following.
 - You log the message
 - You echo it to the screen using the weird capitalization
    - Note: additions to `services.yaml` in config/routes: 
@@ -68,14 +68,14 @@ class userController implements ServiceSubscriberInterface
     App\Services\Transform $capitalizer : '@App\Services\Capitalizer'
     App\Services\Transform $dasher : '@App\Services\Dasher'```
 
-- [ ] Reuse the classes you made inside the master class, but you should not use the keyword "new" inside the master class. Pass it to the constructor.
+- [x] Reuse the classes you made inside the master class, but you should not use the keyword "new" inside the master class. Pass it to the constructor.
 
 To type hint the string transformation class, use the name of the `transform` interface instead of the concrete class you are using: you will see in step 3 why.
 
 You can execute this master class in a simple controller.
 
 ### Step 3: Polymorphism
--[ ] Add a dropdown with 2 options in your form (keep it simple, just an html dropdown will be enough for now). The 2 options are the names of the 2 classes you made that transform a string. Make it so that depending on the user input one transformation is applied.
+-[x] Add a dropdown with 2 options in your form (keep it simple, just an html dropdown will be enough for now). The 2 options are the names of the 2 classes you made that transform a string. Make it so that depending on the user input one transformation is applied.
 
 **Do not change anything in your master class file!**
 

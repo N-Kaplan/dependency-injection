@@ -36,15 +36,15 @@ class MessageController extends AbstractController
         $this->logger = $logger;
     }
 
-
     #[Route('/', name: 'message')]
     public function index(Request $request): Response
     {
-//        $input = new Input();
-//        $output = $input->getMessage();
-//        $transformation = 'capitalize';
+        $input = new Input();
+        $output = '';
+
         $master = new Master($this->capitalizer, $this->dasher, $this->logger, 'test message');
         $master->log();
+
 
         $form = $this->createFormBuilder()
             ->add('message', TextType::class)
@@ -61,15 +61,14 @@ class MessageController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $input = $form->getData();
-//            var_dump($input);
-//            $output = $input['message']->getMessage();
-//            var_dump($output);
+            $master = new Master($this->capitalizer, $this->dasher, $this->logger, $input['message']);
+            $master->log();
+            $output =  $input['transformation'] === 'capitalize' ? $master->capitalize(): $master->dash();
         }
 
         return $this->renderForm('message/index.html.twig', [
             'form' => $form,
-//            'transformation' => $transformation,
-//            'output' => $output,
+            'output' => $output,
         ]);
     }
 }

@@ -32,11 +32,11 @@ class Master
     }
 
     public function capitalize() {
-        $this->capitalizer->transform($this->message);
+        return $this->capitalizer->transform($this->message);
     }
 
     public function dash() {
-        $this->dasher->transform($this->message);
+        return $this->dasher->transform($this->message);
     }
 
 }
