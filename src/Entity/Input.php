@@ -14,24 +14,24 @@ class Input
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $inputText;
+    private string $message;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $transformation;
+    private string $transformation;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getInputText(): ?string
+    public function getMessage(): ?string
     {
-        return $this->inputText;
+        return $this->message;
     }
 
-    public function setInputText(string $inputText): self
+    public function setMessage(string $message): self
     {
-        $this->inputText = $inputText;
+        $this->message = $message;
 
         return $this;
     }

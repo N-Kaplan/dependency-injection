@@ -17,6 +17,6 @@ Class Logger {
 
     public function index($message)
     {
-        $this->logger->info($message);
+        $this->logger->log('ALERT', $message);
     }
 }

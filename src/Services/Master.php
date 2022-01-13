@@ -16,6 +16,7 @@ class Master
      * @param Transform $capitalizer
      * @param Transform $dasher
      * @param \App\Services\Logger $logger
+     * @param string $message
      */
     public function __construct(Transform $capitalizer, Transform $dasher, \App\Services\Logger $logger, string $message)
     {
@@ -25,17 +26,17 @@ class Master
         $this->message = $message;
     }
 
-    public function log(string $message) {
-//        $this->logger->index($message);
-        
+    public function log() {
+        $this->logger->index($this->message);
+
     }
 
-    public function capitalize(string $message) {
-        $this->capitalizer->transform($message);
+    public function capitalize() {
+        $this->capitalizer->transform($this->message);
     }
 
-    public function dash(string $message) {
-        $this->dasher->transform($message);
+    public function dash() {
+        $this->dasher->transform($this->message);
     }
 
 }

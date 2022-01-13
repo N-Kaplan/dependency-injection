@@ -23,9 +23,11 @@ class MessageController extends AbstractController
     private Transform $dasher;
     private Logger $logger;
 
+
     /**
      * @param Transform $capitalizer
      * @param Transform $dasher
+     * @param Logger $logger
      */
     public function __construct(Transform $capitalizer, Transform $dasher, Logger $logger)
     {
@@ -38,11 +40,11 @@ class MessageController extends AbstractController
     #[Route('/', name: 'message')]
     public function index(Request $request): Response
     {
-        $master = new Master($this->capitalizer, $this->dasher, $this->logger);
-
-        $input = new Input();
-        $output = $input->getInputText();
-        $transformation = $input->getTransformation();
+//        $input = new Input();
+//        $output = $input->getMessage();
+//        $transformation = 'capitalize';
+        $master = new Master($this->capitalizer, $this->dasher, $this->logger, 'test message');
+        $master->log();
 
         $form = $this->createFormBuilder()
             ->add('message', TextType::class)
@@ -59,9 +61,9 @@ class MessageController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $input = $form->getData();
-            var_dump($input);
-
-
+//            var_dump($input);
+//            $output = $input['message']->getMessage();
+//            var_dump($output);
         }
 
         return $this->renderForm('message/index.html.twig', [
@@ -69,9 +71,5 @@ class MessageController extends AbstractController
 //            'transformation' => $transformation,
 //            'output' => $output,
         ]);
-
-//        return $this->render('message/index.html.twig', [
-//            'controller_name' => 'MessageController',
-//        ]);
     }
 }
