@@ -92,4 +92,5 @@ In short: When two objects have the same interface, they are functionally interc
      ```
     Monolog\Logger : ~
 
-    App\Controller|MessageController $logger : '@Monolog\Logger'```
+    App\Controller|MessageController $logger : '@Monolog\Logger'
+    ```
